@@ -1,0 +1,232 @@
+/* -------------------- CONFIGURACIÓN GENERAL -------------------- */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #ffffff, #f8f9fb);
+  color: #0b172a;
+  overflow-x: hidden;
+}
+
+/* Fondo animado con movimiento sutil */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, #ff7b00 1%, transparent 30%),
+              radial-gradient(circle at 80% 80%, #ffb84d 1%, transparent 30%);
+  background-size: 200% 200%;
+  animation: moveBackground 15s ease-in-out infinite alternate;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+@keyframes moveBackground {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: #0b172a;
+}
+
+.search-bar input {
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+  border-color: #ff7b00;
+}
+
+.btn-search {
+  background-color: #ff7b00;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #ffa733;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
+}
+
+.search-icon::before {
+  content: "🔍";
+  font-size: 1.1rem;
+}
+
+/* -------------------- NAV LINKS -------------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0b172a;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff7b00;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+
+.user { background-image: url('https://cdn-icons-png.flaticon.com/512/847/847969.png'); }
+.heart { background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); }
+.cart { background-image: url('https://cdn-icons-png.flaticon.com/512/833/833314.png'); }
+
+/* -------------------- SUBMENÚ -------------------- */
+.submenu {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.btn-toggle {
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #0b172a;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.btn-toggle.active,
+.btn-toggle:hover {
+  color: #ff7b00;
+  border-bottom: 2px solid #ff7b00;
+}
+
+/* -------------------- PRODUCTOS -------------------- */
+.productos {
+  animation: fadeIn 1s ease;
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.producto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.producto-img {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.producto-card:hover .producto-img {
+  transform: scale(1.05);
+}
+
+/* Ejemplo de imágenes de productos */
+.product1 {
+  background-image: url('https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/ee57a9e8-4b8b-4a40-a9de-0e6b0b2d8e6a/club-fleece-pullover-hoodie.png');
+}
+
+.product2 {
+  background-image: url('https://assets.adidas.com/images/w_600,f_auto,q_auto/6b3cda6e1a3c4dbd8b05ad2100e018c8_9366/Pantalon_Adicolor_Classics_Firebird_TT_Negro_IB7405_21_model.jpg');
+}
+
+.product3 {
+  background-image: url('https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1b146173-7e87-457d-8303-bf622cbd6c28/dri-fit-one-short-sleeve-top.png');
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.footer .links a {
+  margin: 0 1rem;
+  color: #0b172a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer .links a:hover {
+  color: #ff7b00;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.ig { background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384063.png'); }
+.fb { background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384053.png'); }
+.tiktok { background-image: url('https://cdn-icons-png.flaticon.com/512/3046/3046126.png'); }
+.yt { background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384060.png'); }
+.li { background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384014.png'); }
+.ws { background-image: url('https://cdn-icons-png.flaticon.com/512/733/733585.png'); }
+
+/* -------------------- ANIMACIONES -------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

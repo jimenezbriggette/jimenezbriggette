@@ -1,0 +1,253 @@
+.productos-destacados {
+  background-color: #f9f9f9;
+}
+
+.producto-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.producto-card img {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.producto-card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.producto-card .btn {
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+
+
+:root {
+  --azul: #0b3d91;
+  --rojo: #e63946;
+  --gris-claro: #f4f4f4;
+  --gris-medio: #c0c0c0;
+  --negro: #000;
+  --blanco: #fff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--blanco);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Fondo animado */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #0b3d91, #001c4a, #0b3d91);
+  background-size: 600% 600%;
+  animation: moveBackground 20s ease infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Header */
+.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--gris-medio);
+  z-index: 10;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(var(--azul), var(--rojo), var(--azul));
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-links a {
+  color: var(--negro);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--azul);
+}
+
+/* Iconos */
+.btn-icon {
+  width: 25px;
+  height: 25px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--azul), var(--rojo));
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-icon::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--blanco);
+}
+
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Submenú */
+.submenu {
+  background-color: var(--gris-claro);
+}
+
+.btn-toggle {
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 25px;
+  transition: 0.3s ease;
+}
+
+.btn-toggle.active {
+  border-bottom: 3px solid var(--azul);
+}
+
+.btn-toggle:hover {
+  color: var(--azul);
+}
+
+/* Productos */
+.producto-card {
+  background-color: var(--blanco);
+  border-radius: 10px;
+  border: 1px solid var(--gris-medio);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.producto-img {
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--gris-claro), var(--gris-medio));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Simulación de imagen animada */
+.product1::before,
+.product2::before,
+.product3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  animation: pulse 3s ease-in-out infinite alternate;
+}
+
+.product1::before {
+  background-image: linear-gradient(135deg, #3a7bd5, #3a6073);
+}
+.product2::before {
+  background-image: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.product3::before {
+  background-image: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+.footer a {
+  color: var(--blanco);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: var(--azul);
+}
+
+.icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rojo), var(--azul));
+  animation: shimmer 4s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  from {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+  }
+}
